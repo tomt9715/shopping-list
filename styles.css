@@ -1,35 +1,54 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .website-title {
     text-align: center;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-.column {
-    float: left;
-    flex: 50%;
-    padding-right: 3px;
-    padding-bottom: 5px;
-}
-
-.row:after {
-    content: "";
-    display: flex;
-    clear: both;
-}
-
 table {
-    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.add-button {
-    float: left;
-    flex: 50%;
-    padding-right: 3px;
-    padding-bottom: 5px;
-    content: "";
-    display: flex;
-    clear: both;
+th {
+    height: 20px;
+    text-align: center;
+    background-color: green;
+    color: white;
+
 }
 
+tr {
+    height: 20px;
+}
+
+.item-container {
+    width: 200px;
+}
+
+.price-container {
+    width: 100px;
+}
+
+.calculate {
+    text-align: center;
+    padding-top: 10px;
+}
+
+button {
+    
+    background-color: green;
+    border: none;
+    color: white;
+}
+
+button:hover {
+    background-color: darkgreen;
+    cursor: pointer;
+}
+
+.total, .subtotal, .total-items {
+    text-align: center;
+    padding-top: 20px;
+}

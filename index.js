@@ -1,22 +1,30 @@
 function getTotals() {
-    var input1 = document.getElementById("input1").nodeValue;
-    var input2 = document.getElementById("input2").nodeValue;
-    var input3 = document.getElementById("input3").nodeValue;
-    var input4 = document.getElementById("input4").nodeValue;
-    var input5 = document.getElementById("input5").nodeValue;
+    var input1 = parseFloat(document.getElementById("input1").value);
+    var input2 = parseFloat(document.getElementById("input2").value);
+    var input3 = parseFloat(document.getElementById("input3").value);
+    var input4 = parseFloat(document.getElementById("input4").value);
+    var input5 = parseFloat(document.getElementById("input5").value);
+
+    var currency = new Intl.NumberFormat("en-US", {
+        style: "currency", 
+        currency: "USD"
+    });
 
     var subTotal = input1 + input2 + input3 + input4 + input5;
-    document.getElementById("subtotal").innerText = subTotal;
+    var originalText1 = document.getElementById("subtotal").innerText;
+    document.getElementById("subtotal").innerText = originalText1 +currency.format(subTotal);
 
     var total = (subTotal * 0.08875) + subTotal;
-    document.getElementById("total").innerText = total;
+    var originalText2 = document.getElementById("total").innerText; 
+    document.getElementById("total").innerText = originalText2 + currency.format(total);
 
-    var item1 = document.getElementById("item-input1").nodeValue; 
-    var item2 = document.getElementById("item-input2").nodeValue;
-    var item3 = document.getElementById("item-input3").nodeValue;
-    var item4 = document.getElementById("item-input4").nodeValue;
-    var item5 = document.getElementById("item-input5").nodeValue;
+    var item1 = document.getElementById("item-input1").value; 
+    var item2 = document.getElementById("item-input2").value;
+    var item3 = document.getElementById("item-input3").value;
+    var item4 = document.getElementById("item-input4").value;
+    var item5 = document.getElementById("item-input5").value;
 
-    var itemTotal = item1 + item2 + item3 + item4 + item5;
-    document.getElementById("total-items").innerText = itemTotal;
+    var itemTotal = item1 + "<br>" + item2 + "<br>" + item3 + "<br>" + item4 + "<br>" + item5 + "<br>";
+    document.getElementById("total-items").innerHTML = itemTotal;
+
 }

@@ -81,9 +81,7 @@ function insertRow() {
 
 }
 
-function removeRow(btn) {
-    var row = btn.parentNode.parentNode;
-    row.parentNode.removeChild(row);
+function removeRow() {
 }
 
 let itemAction = document.querySelector(".item-container");

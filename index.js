@@ -5,18 +5,6 @@ function getTotals() {
         currency: "USD"
     });
 
-    // var subTotal = input1 + input2 + input3 + input4 + input5;
-    // var originalText1 = "Total before tax: ";
-    // document.getElementById("subtotal").innerText = originalText1 +currency.format(subTotal);
-
-    // var total = (subTotal * 0.08875) + subTotal;
-    // var originalText2 = "Total after tax: ";
-    // document.getElementById("total").innerText = originalText2 + currency.format(total);
-
-    // var itemTotal = item1 + "<br>" + item2 + "<br>" + item3 + "<br>" + item4 + "<br>" + item5 + "<br>";
-    // document.getElementById("total-items").innerHTML = itemTotal;
-
-    // setting prices = returns a collection of elements in the document with the specified class name.
     var prices = document.getElementsByClassName("price-container");
     // subtotal = starting value of the total prices.
     var subtTotal = 0;
@@ -35,7 +23,7 @@ function getTotals() {
     var itemNames = "";
     for (var i = 0; i < itemTotal.length; i++) {
         var itemElement = itemTotal[i];
-        itemNames += Number(itemElement.value);
+        itemNames += itemElement.value;
     }
     var originalText = "Total before tax: ";
     var subTotalElement = document.getElementById("subtotal")
@@ -45,7 +33,9 @@ function getTotals() {
     var totalElement = document.getElementById("total");
     totalElement.innerText = originalText + currency.format(total);
 
+    var originalText3 = "Total items: ";
     var itemNamesElement = document.getElementById("total-items");
+    itemNamesElement.innerText = originalText3 + itemNames;
 
 }
 
@@ -81,13 +71,17 @@ function insertRow() {
 
 }
 
-function removeRow() {
+function removeRow(row) {
+    var i = row.parentNode.parentNode.rowIndex;
+    document.getElementById("table");
 }
 
-let itemAction = document.querySelector(".item-container");
-
-function firstFunction(event) {
-    event.preventDefault();
-    itemAction.innerHTML = //dont know what goes here
+var itemActions = document.getElementsByClassName("item-container");
+var priceActions = document.getElementsByClassName("price-container");
+for (var i = 0; i < itemActions.length; i++) {
+    var itemAction = itemActions[i];
+    itemAction.addEventListener("keyup", getTotals);
+    var priceAction = priceActions[i];
+    priceAction.addEventListener("keyup", getTotals);
 }
-itemAction.addEventListener("keydown", firstFunction);
+console.log(itemActions.length);

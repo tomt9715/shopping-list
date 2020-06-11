@@ -2,12 +2,11 @@
 <html>
 
 <head>
-    <title>
-        Shopping List
-    </title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <script src="index.js"></script>
+        <title>
+            Shopping List
+        </title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,57 +14,78 @@
         Shopping List
     </h1>
 
-    <table style="width: 30%; text-align: center; vertical-align: middle;">
-        <tr>
-            <th>Name of Item</th>
-            <th>Price of Item</th>
-        </tr>
-        <tr>
-            <td>
-                <input class="item-container" type="text" id="item-input1" maxlength="128">
-            </td>
-            <td>
-                <input class="price-container" type="text" id="input1" maxlength="128">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input class="item-container" type="text" id="item-input2" maxlength="128">
-            </td>
-            <td>
-                <input class="price-container" type="text" id="input2" maxlength="128">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input class="item-container" type="text" id="item-input3" maxlength="128">
-            </td>
-            <td>
-                <input class="price-container" type="text" id="input3" maxlength="128">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input class="item-container" type="text" id="item-input4" maxlength="128">
-            </td>
-            <td>
-                <input class="price-container" type="text" id="input4" maxlength="128">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input class="item-container" type="text" id="item-input5" maxlength="128">
-            </td>
-            <td>
-                <input class="price-container" type="text" id="input5" maxlength="128">
-            </td>
-        </tr>
+    <table style="width: 25%; text-align: center; vertical-align: middle;" id="table">
+        <thead>
+            <tr>
+                <th>Name of Item</th>
+                <th>Price of Item</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody">
+            <tr>
+                <td>
+                    <input class="item-container" type="text" id="item-input1" maxlength="128">
+                </td>
+                <td>
+                    <input class="price-container" type="text" id="input1" maxlength="128">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="item-container" type="text" id="item-input2" maxlength="128">
+                </td>
+                <td>
+                    <input class="price-container" type="text" id="input2" maxlength="128">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="item-container" type="text" id="item-input3" maxlength="128">
+                </td>
+                <td>
+                    <input class="price-container" type="text" id="input3" maxlength="128">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="item-container" type="text" id="item-input4" maxlength="128">
+                </td>
+                <td>
+                    <input class="price-container" type="text" id="input4" maxlength="128">
+                </td>
+            </tr>
+            <tr id="row">
+                <td>
+                    <input class="item-container" type="text" id="item-input5" maxlength="128">
+                </td>
+                <td>
+                    <input class="price-container" type="text" id="input5" maxlength="128">
+                </td>
+            </tr>
+        </tbody>
     </table>
 
-    <div class="calculate">
-        <button id="calculate-btn" type="button" onclick="getTotals()">
-            Calculate
-        </button>
+    <div class="btn-wrapper">
+
+        <div class="add-row">
+            <button class="add-row-btn" id="add-row-btn" type="button" onclick="insertRow()">
+                Add Row
+            </button>
+        </div>
+
+        <!-- <div class="remove-row">
+            <button class="remove-row-btn" id="remove-row-btn" type="button" onclick="removeRow()">
+                Remove Row
+            </button>
+        </div> -->
+
+        <div class="calculate">
+            <button class="calculate-btn" id="calculate-btn" type="button" onclick="getTotals()">
+                Calculate
+            </button>
+        </div>
+    
     </div>
 
     <div class="subtotal">
@@ -78,7 +98,8 @@
     <div class="total-items">
         <p id="total-items">Total items:</p>
     </div>
-
+    
+    <script src="index.js"></script>
 </body>
 
 </html>

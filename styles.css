@@ -16,7 +16,6 @@ th {
     text-align: center;
     background-color: green;
     color: white;
-
 }
 
 tr {
@@ -31,23 +30,27 @@ tr {
     width: 100px;
 }
 
-.calculate {
-    text-align: center;
-    padding-top: 10px;
+input:focus {
+    background: whitesmoke;
 }
 
-button {
+.btn-wrapper {
+    text-align: center;
+    width: 100%;
+}
+
+.calculate-btn, .add-row-btn, .remove-row-btn {
     
     background-color: green;
     border: none;
     color: white;
     font-size: 14px;
     margin-top: 20px;
-    margin-bottom: 10px;
-    padding: 10px 32px;
+    padding: 10px 30px;
 }
 
-button:hover {
+
+.calculate-btn:hover, .add-row-btn:hover, .remove-row-btn:hover {
     background-color: darkgreen;
     cursor: pointer;
 }

@@ -19,6 +19,7 @@
             <tr>
                 <th>Name of Item</th>
                 <th>Price of Item</th>
+                <th>Remove</th>
             </tr>
         </thead>
 
@@ -30,6 +31,9 @@
                 <td>
                     <input class="price-container" type="text" id="input1" maxlength="128">
                 </td>
+                <td>
+                    <input class="button-container" type="button" value="Remove" onclick="removeRow()">
+                </td>
             </tr>
             <tr>
                 <td>
@@ -37,6 +41,9 @@
                 </td>
                 <td>
                     <input class="price-container" type="text" id="input2" maxlength="128">
+                </td>
+                <td>
+                    <input class="button-container" type="button" value="Remove" onclick="removeRow()">
                 </td>
             </tr>
             <tr>
@@ -46,6 +53,9 @@
                 <td>
                     <input class="price-container" type="text" id="input3" maxlength="128">
                 </td>
+                <td>
+                    <input class="button-container" type="button" value="Remove" onclick="removeRow()">
+                </td>
             </tr>
             <tr>
                 <td>
@@ -54,6 +64,9 @@
                 <td>
                     <input class="price-container" type="text" id="input4" maxlength="128">
                 </td>
+                <td>
+                    <input class="button-container" type="button" value="Remove" onclick="removeRow()">
+                </td>
             </tr>
             <tr id="row">
                 <td>
@@ -61,6 +74,9 @@
                 </td>
                 <td>
                     <input class="price-container" type="text" id="input5" maxlength="128">
+                </td>
+                <td>
+                    <input class="button-container" type="button" value="Remove" onclick="removeRow()">
                 </td>
             </tr>
         </tbody>
@@ -71,18 +87,6 @@
         <div class="add-row">
             <button class="add-row-btn" id="add-row-btn" type="button" onclick="insertRow()">
                 Add Row
-            </button>
-        </div>
-
-        <div class="remove-row">
-            <button class="remove-row-btn" id="remove-row-btn" type="button" onclick="removeRow()">
-                Remove Row
-            </button>
-        </div>
-
-        <div class="calculate">
-            <button class="calculate-btn" id="calculate-btn" type="button" onclick="getTotals()">
-                Calculate
             </button>
         </div>
     

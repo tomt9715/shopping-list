@@ -45,10 +45,17 @@ function insertRow() {
 
     // New Row With Inputs
     let newRow = document.createElement("tr");
+        //Column 1
     let newColumn = document.createElement("td");
     let input1 = document.createElement("input");
+    input1.addEventListener("keyup", getTotals);
+        // Column 2
     let newColumn2 = document.createElement("td");
     let input2 = document.createElement("input");
+    input2.addEventListener("keyup", getTotals);
+        // Column 3
+    let newColumn3 = document.createElement("td");
+    let removeBtn = document.createElement("input");
 
     Object.assign(input1, {
         className: "item-container",
@@ -62,26 +69,42 @@ function insertRow() {
         type: "text"
     })
 
+    Object.assign(removeBtn, {
+        className: "button-container",
+        type: "button",
+        value: "Remove",
+        onclick: removeRow
+    })
 
     newColumn.appendChild(input1);
     newColumn2.appendChild(input2);
+    newColumn3.appendChild(removeBtn);
     newRow.appendChild(newColumn);
     newRow.appendChild(newColumn2)
+    newRow.appendChild(newColumn3);
     tBody.appendChild(newRow);
 
 }
 
-function removeRow(row) {
-    var i = row.parentNode.parentNode.rowIndex;
-    document.getElementById("table");
+function removeRow() {
+    let td = event.target.parentNode;
+    let tr = td.parentNode;
+    tr.parentNode.removeChild(tr);
 }
 
 var itemActions = document.getElementsByClassName("item-container");
 var priceActions = document.getElementsByClassName("price-container");
+var btnActions = document.getElementsByClassName("button-container");
+
 for (var i = 0; i < itemActions.length; i++) {
     var itemAction = itemActions[i];
     itemAction.addEventListener("keyup", getTotals);
     var priceAction = priceActions[i];
     priceAction.addEventListener("keyup", getTotals);
+}
+
+for (var i = 0; i < btnActions.length; i++) {
+    var btnAction = btnActions[i];
+    btnAction.removeEventListener("click", removeRow);
 }
 console.log(itemActions.length);
